@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>视频播放</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="jquery.range.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="operations.js"></script>
+    <script src="jquery.range.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <p class="nav">
+            <input type="button" name="home" href="home.html" value="首页">
+            <input type="button" name="about" href="#" value="关于我们">
+            <input type="button" name="work" href="#" value="作品展示">
+
+            <a href="login.html" class="right">登录</a>
+            <a href="register.html" class="right">注册&nbsp;&nbsp;</a>
+        </p>
+    </div>
+    <img src="background.jpg" width="100%">
+    <video width="800px" height="400px" controls preload="metadata" src=""></video>
+    <button id="test">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+    <br><br>
+    <input id="range" type="hidden" class="range" value="0" />
+    <div id="state" style="color:white" align="center">
+        <table border="2px">
+            <tr>
+                <th>Session ID</th>
+                <th>x</th>
+                <th>width</th>
+                <th>amplification</th>
+            </tr>
+            <tr>
+                <td id="sessionTb">0</td>
+                <td id="xTb">0</td>
+                <td id="widthTb">0</td>
+                <td id="amplificationTb">0</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="move">
+        <input type="button" class="control" value="width"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" class="control" value="放大"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" class="control" value="缩小">
+    </div>
+
+    <div class="submit">
+        <br><br><label style="color:white">Session ID: </label>
+        <input type="text">
+        <input type="submit" value="Enter">
+        <br><br>
+    </div>
+
+    <div class="Input_Box">
+        <textarea class="Input_text"></textarea>
+        <a class="postBtn">确定</a>
+    </div>
+
+    <br><br>
+
+    <div class="Input_Box">
+        <textarea class="Input_text"></textarea>
+    </div>
+
+    <br><br>
+    <div class="Input_Box">
+        <textarea class="Input_text"></textarea>
+    </div>
+
+    <br><br>
+    <div class="Input_Box">
+        <textarea class="Input_text"></textarea>
+    </div>
+
+    <div class="page">
+        <input type="button" name="首页" value="首页"> &nbsp;&nbsp;
+        <input type="button" name="上一页" value="上一页"> &nbsp;&nbsp;;
+        <input type="button" name="1" value="1"> &nbsp;&nbsp;
+        <input type="button" name="2" value="2"> &nbsp;&nbsp;
+        <input type="button" name="3" value="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" name="50" value="50"> &nbsp;&nbsp;
+        <input type="button" name="下一页" value="下一页"> &nbsp;&nbsp;
+        <input type="button" name="尾页" value="尾页">
+    </div>
+
+    <br><br><br>
+
+    <div class="line_01"><span>小小分隔线 单标签实现</span></div>
+
+    <br><br><br>
+
+    <footer>
+        友情链接：
+        <div class="web">
+            <a href="https://www.baidu.com/">百度</a>
+            <br>
+            <a href="http://www.qq.com/">腾讯</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

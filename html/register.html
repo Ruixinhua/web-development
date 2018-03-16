@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>register</title>
+<link rel="stylesheet" type="text/css" href="logreg.css">
+
+<script type="text/javascript">
+		//验证信息填写是否有误
+		function check()
+		{
+			var username = document.getElementById("username").value;
+			var pass = document.getElementById("pass").value;
+			var pass2 = document.getElementById("pass2").value;
+			var realname = document.getElementById("realname").value;
+			var phonenumber = document.getElementById("phonenumber").value;
+			if(username==""||pass==""||pass2==""||realname==""||phonenumber==""){
+				alert("请确认是否有空缺项！")
+				return false;
+			}
+		   if(username.length <6 || username.length>16)
+		   {
+		   alert('用户名不合法！请输入6-16位用户名');
+		   form.username.focus();
+		   return false;
+		   }
+		   if(pass.length<6 ||pass.length>16)
+		   {
+		   alert('密码不合法！请输入6-16位密码');
+		   form.username.focus();
+		   return false;
+		   }
+		   if(pass!= pass2)//判断两次输入的密码是否一致
+		   {
+			alert("两次输入的密码不一致！");
+			form.pass.focus();
+			return false;
+		   }
+		   
+		   alert("注册成功！")
+		}
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<h1>Welcome</h1>
+
+			<form name='form' class="form" action="#" method='post' onsubmit="return check()">
+				<input type="text" placeholder="用户名(请输入6～16位用户名)" id='username'>
+				<input type="password" placeholder="密码(请输入6～16位密码)" id='pass'>
+				<input type="password" placeholder="再次确认密码" id='pass2'>
+				<input type="text" placeholder="姓名(选填)" id='realname'>
+				<input type="Password" placeholder="手机号(选填)" id='phonenumber'>
+				<button type="submit" id="register-button" value='submit'	 name='submit' >注册</button>
+				<button type="submit" id="login-button" ><a href="login.html" class="cc">返回登录</a></button>
+			</form>
+		</div>
+		
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+	</div>
+</body>
+</html>

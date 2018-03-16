@@ -1,0 +1,188 @@
+html, body {
+    height:100%;
+    margin:0;
+    padding:0
+}
+
+.top{
+    left: 0;
+    width:100%;
+    height:60px;
+    background-image: url("1.jpg");
+    position:fixed; 
+    top:0;
+    z-index: 9999;
+    background-repeat: no-repeat;
+}
+
+.nav{
+    font-weight:300;
+    text-align: center;
+
+}
+.right{
+    float:right;
+    text-decoration:none;
+    color: white;
+}
+.nav input{
+    text-align: center;
+    outline: 0;
+    border: 1px blue solid;
+    color: purple;
+    border-radius: 2px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    font-family: 宋体;
+    background:white;
+
+}
+
+.nav input:hover{
+    background-color: #1586ff;
+}
+
+img{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+}
+
+video{
+    margin-left: 100px; 
+	margin-top: 6rem;
+    left: 300px;
+}
+
+.submit{
+    margin-left: 180px;
+}
+
+.submit input[type="text"]{
+    width: 500px;
+    height: 20px;
+}
+
+.move{
+    margin-left: 220px;
+}
+
+.page{
+    margin-top:50px;
+    margin-left: 300px;
+}
+
+.control{
+    color: white;
+    background-color: brown;
+    border-color: #EEEEEE;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 40px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+
+.control:hover{
+    background-color: grey;
+    text-decoration: none;
+    outline: none;
+}
+
+
+.line_01{ 
+    height: 1px;  
+    border-top: 1px solid #ddd;  
+    text-align: center;  
+}  
+.line_01 span{  
+    position: relative;  
+    top: -8px;  
+    background: #fff;  
+    padding: 0 20px;  
+} 
+
+.range{
+    width: 800px;
+    margin-left: 100px; 
+    -webkit-appearance:none;
+    border-radius: 10px;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+
+.range::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+}
+
+.range:focus {
+    outline: none;
+}
+
+/*以下是评论区*/
+
+.Input_Box { 
+    margin-left: 300px;
+    width: 495px;   
+    height: 160px;     
+    border: 1px solid #ccc;
+    transition: border linear .2s, box-shadow linear .5s;     
+    border-radius: 5px;     
+    background-color: #fff;         
+    box-shadow: 0 0 5px #ccc;     
+}     
+.Input_Box>textarea { 
+    font-size: 20px;  
+    width: 485px;     
+    height: 111px;     
+    padding: 5px;     
+    outline: none;     
+    border: 0px solid #fff;     
+    resize: none;         
+    border-radius: 5px;     
+}        
+  
+.postBtn {     
+    float: right;       
+    color: #808080;     
+    padding: 9px 20px 7px 20px;         
+    cursor: pointer;          
+    border-radius: 0 0 5px 0;
+    z-index: 44;     
+}     
+.postBtn:hover {     
+    color: #333;     
+    background-color: #efefef;     
+}     
+.postBtn:active {     
+    padding: 10px 20px 6px 20px;     
+}     

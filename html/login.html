@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="logreg.css">
+    	
+		<script type="text/javascript">
+		
+		function check(){
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+		  if(username == "")//如果用户名为空
+		  {
+			alert("您还没有填写用户名！");
+			form.username.focus();
+			return false;
+		  }
+		  if(password == "")//如果密码为空
+		  {
+			alert("您还没有填写密码！");
+			myform.pass.focus();
+			return false;
+		  }
+		 
+		}
+				
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<h1>Welcome</h1>
+			
+			<form name='form' class="form" method='post' action=''>
+				<input type="text" placeholder="用户名" id='username'>
+				<input type="password" placeholder="密码" id='password'>
+				<button type="submit" id="login-button" name='submit' value='submit' onclick="return check();">登录/Login</button>
+				<button type="submit" id="register-button"><a href="register.html" class="cc">注册/Register</a></button>
+				
+			</form>
+		</div>
+			<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			</ul>
+	</div>
+</body>
+</html>
