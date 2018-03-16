@@ -17,13 +17,20 @@
             <input type="button" name="home" href="home.html" value="首页">
             <input type="button" name="about" href="#" value="关于我们">
             <input type="button" name="work" href="#" value="作品展示">
-
             <a href="login.html" class="right">登录</a>
             <a href="register.html" class="right">注册&nbsp;&nbsp;</a>
         </p>
     </div>
     <img src="background.jpg" width="100%">
-    <video width="800px" height="400px" controls preload="metadata" src=""></video>
+    <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab" id="vlc" style="width: 640px; height: 480px;">
+		<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+       width="640"
+       height="480"
+	   id="vlc"
+	   autoplay="yes" loop="no"
+	   target="rtsp://localhost:554/test" />
+		<param id="target" name="target" value="rtsp://localhost:554/test" />
+	</object>
     <button id="test">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
     <br><br>
     <input id="range" type="hidden" class="range" value="0" />
@@ -46,15 +53,15 @@
     <br>
     <br>
     <div class="move">
-        <input type="button" class="control" value="width"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="widthBt" type="button" class="control">width</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="button" class="control" value="放大"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="button" class="control" value="缩小">
     </div>
 
     <div class="submit">
         <br><br><label style="color:white">Session ID: </label>
-        <input type="text">
-        <input type="submit" value="Enter">
+        <input id="session" type="text">
+        <button id="sessionBt" type="button">Enter</button>
         <br><br>
     </div>
 

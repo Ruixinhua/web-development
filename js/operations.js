@@ -1,14 +1,5 @@
 $(document).ready(function() {
-    $('#range').jRange({
-        from: -2.0,
-        to: 2.0,
-        step: 0.5,
-        scale: [-2.0, -1.0, 0.0, 1.0, 2.0],
-        format: '%s',
-        width: 300,
-        showLabels: true,
-        snap: true
-    });
+
     $("#test").click(function() {
         alert("test");
         $.get("/connect?name=session", function(data, status) {
@@ -38,9 +29,23 @@ $(document).ready(function() {
                 $('#widthTb').html(data);
                 $('#xTb').html(data);
                 $('#amplificationTb').html(1);
-                $('#range').attr('max', data);
-                $('#range').val(data / 2);
+                $('#range').jRange('updateRange', '0,100', '50');
             }
         });
     })
+});
+$('#range').jRange({
+    from: 0,
+    to: 0,
+    step: 20,
+    scale: [0, 0],
+    format: '%s',
+    width: 300,
+    showLabels: true,
+    snap: true,
+    ondragend: function() {
+        alert('changed');
+        $('#session').val('changed');
+        console.log('changed');
+    }
 });
