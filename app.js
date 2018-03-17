@@ -23,8 +23,7 @@ app.post('/event', urlencodedParser, function(req, res) {
         param: req.body.param
     };
     console.log(response);
-    event.events.emit(response.name, res, response.param);
-
+    event.events.emit(response.name, res, response);
 })
 
 app.listen(8085, () => {
