@@ -4,72 +4,54 @@
 <meta charset="UTF-8">
 <title>register</title>
 <link rel="stylesheet" type="text/css" href="logreg.css">
-
+<script src="jquery-3.3.1.min.js"></script>	
 <script type="text/javascript">
-		//验证信息填写是否有误
-		function check()
-		{
-			var username = document.getElementById("username").value;
-			var pass = document.getElementById("pass").value;
-			var pass2 = document.getElementById("pass2").value;
-			var realname = document.getElementById("realname").value;
-			var phonenumber = document.getElementById("phonenumber").value;
-			if(username==""||pass==""||pass2==""||realname==""||phonenumber==""){
-				alert("请确认是否有空缺项！")
-				return false;
-			}
-		   if(username.length <6 || username.length>16)
-		   {
-		   alert('用户名不合法！请输入6-16位用户名');
-		   form.username.focus();
-		   return false;
-		   }
-		   if(pass.length<6 ||pass.length>16)
-		   {
-		   alert('密码不合法！请输入6-16位密码');
-		   form.username.focus();
-		   return false;
-		   }
-		   if(pass!= pass2)//判断两次输入的密码是否一致
-		   {
-			alert("两次输入的密码不一致！");
-			form.pass.focus();
-			return false;
-		   }
-		   
-		   alert("注册成功！")
-		}
+		$(function(){
+		       $("#register").click(function () {
+            if ($("#username").val().length < 6 ||$("#username").val().length > 16){          	
+                return alert('请输入6-16位用户名');
+            }
+            if ($("#pass").val().length < 6||$("#pass").val().length > 16){
+                return alert('请输入6-16位密码');
+            }
+            if($("#pass").val() != $("#pass2").val()){
+            	return alert("两次输入的密码不一致！");
+            }
+           $.ajax({
+               url:"http://127.0.0.1:8085//DataServer/local/",
+               type:"POST",
+               async: false,
+               data:{
+                    username:$("#username").val(),
+                    password:$("#pass").val(),
+               },
+               success:function (res) {
+                   alert(res);
+                   window.location ="home.html";
+               },
+               error:function (err) {
+                   console.log(err);
+               }
+           })
+       });
+	});
 	</script>
 </head>
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<h1>Welcome</h1>
+			<h1>欢迎注册</h1>
 
-			<form name='form' class="form" action="#" method='post' onsubmit="return check()">
+			<form class="form" >
+				
 				<input type="text" placeholder="用户名(请输入6～16位用户名)" id='username'>
 				<input type="password" placeholder="密码(请输入6～16位密码)" id='pass'>
 				<input type="password" placeholder="再次确认密码" id='pass2'>
 				<input type="text" placeholder="姓名(选填)" id='realname'>
-				<input type="Password" placeholder="手机号(选填)" id='phonenumber'>
-				<button type="submit" id="register-button" value='submit'	 name='submit' >注册</button>
-				<button type="submit" id="login-button" ><a href="login.html" class="cc">返回登录</a></button>
-			</form>
+				<input type="number" placeholder="手机号(选填)" id='phonenumber'>
+				<button id="register">注册</button>
+				<p> <a href="home.html" class="cc">返回首页</a></p>
 		</div>
-		
-		<ul class="bg-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-		
 	</div>
 </body>
 </html>

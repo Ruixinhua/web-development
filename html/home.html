@@ -3,115 +3,760 @@
 
 <head>
     <meta charset="utf-8">
-    <title>视频播放</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="jquery.range.css">
+    <title>test1</title>
+
     <script src="jquery-3.3.1.min.js"></script>
     <script src="operations.js"></script>
+    <link rel="stylesheet" href="jquery.range.css">
     <script src="jquery.range.js"></script>
+
+    <script type="text/javascript">
+        function submit() {
+            var content = document.getElementsByClassName("discuss_input_text")[0].value;
+            var text = document.createElement("div.comment_0")
+            text.innerHTML = "<div class='comment_user_picture'></div><div class='comment_user_name'>功能测试</div><div class='comment_content'>" + content + "</div><div class='evaluate'><button class='choose'>顶</button><button class='choose'>踩</button></div><div class='line' style='top: -2px;'></div></div>";
+            var list = document.getElementsByClassName("list")[0];
+            list.insertBefore(text, list.childNodes[0]);
+        }
+         window.onload = function(){
+             if(localStorage.username.length>1){
+                 username.innerHTML = localStorage.username;
+                 login.innerHTML = '';
+             }
+        }
+    </script>
+
+    <style type="text/css">
+        .header {
+            width: 100%;
+            height: 50px;
+            position: relative;
+            top: 0;
+            left: 0;
+            background-color: blue;
+            z-index: 99;
+        }
+        
+        .logo {
+            position: relative;
+            top: 10px;
+            left: 0;
+            background-color: grey;
+            width: 100px;
+            height: 30px;
+        }
+        
+        .search {
+            position: relative;
+            top: -20px;
+            left: 200px;
+            background-color: white;
+            width: 500px;
+            height: 30px;
+            border: 0.5px solid grey;
+        }
+        
+        .input {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 445px;
+            height: 25px;
+        }
+        
+        .search-button {
+            position: relative;
+            top: -30px;
+            left: 450px;
+            background-color: #EEF5FA;
+            width: 50px;
+            height: 30px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        
+        .search-button:hover {
+            opacity: 1;
+        }
+        
+        .search-icon {
+            position: relative;
+            top: 5px;
+            left: 15px;
+            background: none;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .user {
+            position: relative;
+            top: -50px;
+        }
+        
+        .user-center {
+            position: relative;
+            background: none;
+            width: 30px;
+            height: 30px;
+            left: 960px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            border-radius: 15px;
+            z-index: 99;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+        }
+        
+        table {
+            position: relative;
+            top: 20px;
+            left: 50px;
+            text-align: center;
+            height: 60px;
+        }
+        
+        .video-list {
+            position: relative;
+            top: 40px;
+            left: 30px;
+            width: 240px;
+            height: 1800px;
+        }
+        
+        .video-next {
+            position: relative;
+            top: 10px;
+            left: 0;
+            right: 0;
+            width: 280px;
+            height: 120px;
+        }
+        
+        .image {
+            position: relative;
+            width: 192px;
+            height: 108px;
+            z-index: 2;
+            cursor: pointer;
+        }
+        
+        .video-time-frame {
+            position: relative;
+            width: 20px;
+            height: 10px;
+            background-color: grey;
+            top: -5px;
+            left: -40px;
+            z-index: 2;
+        }
+        
+        .video-time {
+            position: relative;
+            font-size: 80%;
+            width: 15px;
+            height: 10px;
+            z-index: 3;
+            width: 15px;
+        }
+        
+        .video-content {
+            position: relative;
+            left: 195px;
+            top: -130px;
+            right: 0;
+            width: 130px;
+            height: 100px;
+            cursor: pointer;
+        }
+        
+        .video-belong {
+            position: relative;
+            top: 0px;
+            font-size: 14px;
+            color: grey;
+            opacity: 0.7;
+        }
+        
+        .video-watch-times {
+            position: relative;
+            top: 0px;
+            font-size: 12px;
+            color: grey;
+            opacity: 0.7;
+        }
+        
+        .body {
+            position: relative;
+            top: 0;
+            width: 1050px;
+            margin: 0 auto;
+            background-color: white;
+            height: 2100px;
+            z-index: 0；
+        }
+        
+        .video {
+            width: 700px;
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 500px;
+            /*			background-color: red;*/
+            z-index: 1;
+        }
+        
+        .range_1 {
+            width: 500px;
+            position: relative;
+            top: 10px;
+        }
+        
+        .range_1::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 25px;
+            width: 25px;
+            margin-top: -5px;
+            /*使滑块超出轨道部分的偏移量相等*/
+            background: #ffffff;
+            border-radius: 50%;
+            /*外观设置为圆形*/
+            border: solid 0.125em rgba(205, 224, 230, 0.5);
+            /*设置边框*/
+            box-shadow: 0 .125em .125em #3b4547;
+            /*添加底部阴影*/
+        }
+        
+        .range_1::-webkit-slider-runnable-track {
+            height: 15px;
+            border-radius: 10px;
+            /*将轨道设为圆角的*/
+            box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+            /*轨道内置阴影效果*/
+        }
+        
+        .range_1:focus {
+            outline: none;
+        }
+        
+        .playerall {
+            position: relative;
+            top: 20px;
+            left: 0;
+        }
+        
+        .session {
+            position: relative;
+            width: 688px;
+            top: 32px;
+            left: 0;
+            height: 60px;
+            /*			background-color: grey;*/
+        }
+        
+        .video_name {
+            padding: 10px 0 10px 0;
+            font-size: 20px;
+            text-align: center;
+            color: blue;
+            font-family: 微软雅黑;
+            width: 100px;
+            position: relative;
+            top: 8px;
+            left: 10px;
+            background-color: red;
+        }
+        
+        .S_name {
+            padding: 10px 0 10px 0;
+            width: 100px;
+            position: relative;
+            top: -40px;
+            left: 150px;
+            font-size: 20px;
+            font-family: 微软雅黑;
+        }
+        
+        .S_text {
+            width: 330px;
+            height: 30px;
+            position: relative;
+            font-size: 22px;
+            font-family: 微软雅黑;
+            top: -80px;
+            left: 230px;
+            resize: none;
+        }
+        
+        .S_submit {
+            padding: 2px 0 5px 0;
+            width: 80px;
+            height: 30px;
+            position: relative;
+            font-size: 15px;
+            font-family: 微软雅黑;
+            text-align: center;
+            top: -92px;
+            left: 250px;
+            z-index: 9999;
+            background-color: yellow;
+        }
+        
+        .relative_video {
+            width: 350px;
+            position: relative;
+            top: -500px;
+            left: 700px;
+            height: 2000px;
+            /*			background-color: green;*/
+            z-index: 1;
+        }
+        
+        .comment {
+            width: 700px;
+            position: relative;
+            top: -1950px;
+            left: 0;
+            height: 1500px;
+            /*			background-color: brown;*/
+            z-index: 1;
+        }
+        
+        .intro {
+            position: relative;
+            top: 30px;
+        }
+        
+        .C_name {
+            padding: 10px 0 10px 0;
+            width: 100px;
+            position: relative;
+            top: 0px;
+            left: 20px;
+            font-size: 20px;
+            font-family: 微软雅黑;
+            color: blue;
+        }
+        
+        .summery {
+            position: relative;
+            text-indent: 2em;
+            left: 20px;
+            width: 640px;
+        }
+        
+        .summery_more {
+            text-decoration: none;
+        }
+        
+        .login {
+            position: relative;
+            font-size: 15px;
+            left: 20px;
+            top: 20px;
+        }
+        
+        .login_1 {
+            text-decoration: none;
+            color: blue;
+        }
+        
+        .discuss_input_text {
+            width: 650px;
+            height: 80px;
+            position: relative;
+            left: 20px;
+            top: 30px;
+            resize: none;
+            font-size: 15px;
+        }
+        
+        .discuss_submit {
+            position: relative;
+            left: 556px;
+            top: 40px;
+            font-size: 16px;
+            width: 120px;
+        }
+        
+        .comment_area {
+            position: relative;
+            top: 150px;
+        }
+        
+        .line {
+            position: relative;
+            top: 70px;
+            width: 100%;
+            height: 1px;
+            background-color: grey;
+        }
+        
+        .page {
+            position: relative;
+            top: 100px;
+            left: 530px;
+            font-size: 15px;
+        }
+        
+        .number {
+            text-decoration: none;
+            color: blue;
+        }
+        
+        .up_down {
+            border: solid 1px grey;
+            background: transparent;
+            color: blue;
+        }
+        
+        .list_name {
+            position: relative;
+            top: 10px;
+            left: 20px;
+            color: blue;
+            font-size: 20px;
+        }
+        
+        .list {
+            position: relative;
+            top: 60px;
+            left: 0;
+            /*			background-color: orange;*/
+            width: 700px;
+            height: 1106px;
+        }
+        
+        .comment_0 {
+            position: relative;
+            top: 0;
+        }
+        
+        .comment_user_picture {
+            position: relative;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            left: 20px;
+            background-image: url("user.png");
+        }
+        
+        .comment_user_name {
+            position: relative;
+            top: -30px;
+            left: 80px;
+            font-size: 12px;
+            color: red;
+        }
+        
+        .comment_content {
+            position: relative;
+            top: -20px;
+            left: 80px;
+            width: 600px;
+            font-size: 12px;
+            color: black;
+        }
+        
+        .evaluate {
+            position: relative;
+            top: -10px;
+            left: 80px;
+            font-size: 12px;
+        }
+        
+        .choose {
+            background: transparent;
+            color: grey;
+        }
+        
+        .return_intro {
+            position: relative;
+            top: 50px;
+            width: 100%;
+            height: 20px;
+            background-color: grey;
+            text-align: center;
+        }
+        
+        .return_intro_a {
+            font-size: 15px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="top">
-        <p class="nav">
-            <input type="button" name="home" href="home.html" value="首页">
-            <input type="button" name="about" href="#" value="关于我们">
-            <input type="button" name="work" href="#" value="作品展示">
-            <a href="login.html" class="right">登录</a>
-            <a href="register.html" class="right">注册&nbsp;&nbsp;</a>
-        </p>
-    </div>
-    <img src="background.jpg" width="100%">
-    <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab" id="vlc" style="width: 640px; height: 480px;">
-		<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
-       width="640"
-       height="480"
-	   id="vlc"
-	   autoplay="yes" loop="no"
-	   target="rtsp://localhost:554/test" />
-		<param id="target" name="target" value="rtsp://localhost:554/test" />
-	</object>
-    <button id="test">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
-    <br><br>
-    <input id="range" type="hidden" class="range" value="0" />
-    <div id="state" style="color:white" align="center">
-        <table border="2px">
-            <tr>
-                <th>Session ID</th>
-                <th>x</th>
-                <th>width</th>
-                <th>amplification</th>
-            </tr>
-            <tr>
-                <td id="sessionTb">0</td>
-                <td id="xTb">0</td>
-                <td id="widthTb">0</td>
-                <td id="amplificationTb">0</td>
-            </tr>
-        </table>
-    </div>
-    <br>
-    <br>
-    <div class="move">
-        <button id="widthBt" type="button" class="control">width</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="magnifyBt" type="button" class="control">放大</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="shrinkBt" type="button" class="control">缩小</button>>
-    </div>
-
-    <div class="submit">
-        <br><br><label style="color:white">Session ID: </label>
-        <input id="session" type="text">
-        <button id="sessionBt" type="button">Enter</button>
-        <br><br>
-    </div>
-
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-        <a class="postBtn">确定</a>
-    </div>
-
-    <br><br>
-
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-    </div>
-
-    <br><br>
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-    </div>
-
-    <br><br>
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-    </div>
-
-    <div class="page">
-        <input type="button" name="首页" value="首页"> &nbsp;&nbsp;
-        <input type="button" name="上一页" value="上一页"> &nbsp;&nbsp;;
-        <input type="button" name="1" value="1"> &nbsp;&nbsp;
-        <input type="button" name="2" value="2"> &nbsp;&nbsp;
-        <input type="button" name="3" value="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" name="50" value="50"> &nbsp;&nbsp;
-        <input type="button" name="下一页" value="下一页"> &nbsp;&nbsp;
-        <input type="button" name="尾页" value="尾页">
-    </div>
-
-    <br><br><br>
-
-    <div class="line_01"><span>小小分隔线 单标签实现</span></div>
-
-    <br><br><br>
-
-    <footer>
-        友情链接：
-        <div class="web">
-            <a href="https://www.baidu.com/">百度</a>
-            <br>
-            <a href="http://www.qq.com/">腾讯</a>
+    <div class="body">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="search">
+                <div class="search-input">
+                    <input class="input">
+                </div>
+                <div class="search-button">
+                    <img alt="search" src="search.png" class="search-icon">
+                </div>
+            </div>
+            <div class="user">
+                <img alt="user" class="user-center" src="user.png">
+            </div>
         </div>
-    </footer>
 
+        <div class="video">
+            <div class="playerall">
+                <div class="range">
+                    <input id="range" class="range_1" type="range" name="位置" min="0" max="360" value="0">
+                    <button id="widthBt" type="button" class="control">width</button>
+                    <button id="magnifyBt" type="button" class="control">放大</button>
+                    <button id="shrinkBt" type="button" class="control">缩小</button>
+                </div>
+                <div class="player">
+                    <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab" id="vlc" style="width: 688px; height: 387px;">
+						<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+			   				width="688px"
+			   				height="387px"
+			   				id="vlc"
+			   				autoplay="yes" loop="no"
+			   				target="rtsp://localhost:554/test" />
+						<param id="target" name="target" value="rtsp://172.25.25.220/live" />
+					</object>
+                </div>
+                <div class="button">
+                    <div class="bigger"></div>
+                    <div class="smaller"></div>
+                </div>
+            </div>
+            <div class="parameter">
+                <div class="session">
+                    <div class="video_name">赛事直播</div>
+                    <div class="S_name">Session:</div>
+                    <input id="session" class="S_text" />
+                    <button id="sessionBt" class="S_submit">connect</button>
+                </div>
+                <div class="width">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="relative_video">
+            <div class="state" id="state">
+                <table class="table" border="2px">
+                    <tr>
+                        <th>Session ID</th>
+                        <th>x</th>
+                        <th>width</th>
+                        <th>amplification</th>
+                    </tr>
+                    <tr>
+                        <td id="sessionTb">0</td>
+                        <td id="xTb">0</td>
+                        <td id="widthTb">0</td>
+                        <td id="amplificationTb">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="video-list">
+                <div class="video-next">
+                    <a class="video-photo"> <img class="image" src="video1.jpg">
+                        <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                    </a>
+                    <div class="video-content">
+                        <h4 class="video-title">为2022冬奥会加油!</h4>
+                        <div class="video-belong">体育赛事</div>
+                        <span class="video-watch-times">100万次观看</span>
+                    </div>
+                </div>
+
+                <div class="video-next">
+                    <a class="video-photo"> <img class="image" src="video2.jpg">
+                        <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                    </a>
+                    <div class="video-content">
+                        <h4 class="video-title">为2022冬奥会加油!</h4>
+                        <div class="video-belong">体育赛事</div>
+                        <span class="video-watch-times">100万次观看</span>
+                    </div>
+                </div>
+
+                <div class="video-next">
+                    <a class="video-photo"> <img class="image" src="video3.jpg">
+                        <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                    </a>
+                    <div class="video-content">
+                        <h4 class="video-title">为2022冬奥会加油!</h4>
+                        <div class="video-belong">体育赛事</div>
+                        <span class="video-watch-times">100万次观看</span>
+                    </div>
+                </div>
+
+                <div class="video-next">
+                    <a class="video-photo"> <img class="image" src="video4.jpeg">
+                        <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                    </a>
+                    <div class="video-content">
+                        <h4 class="video-title">为2022冬奥会加油!</h4>
+                        <div class="video-belong">体育赛事</div>
+                        <span class="video-watch-times">100万次观看</span>
+                    </div>
+                </div>
+
+                <div class="video-next">
+                    <a class="video-photo"> <img class="image" src="video5.jpg">
+                        <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                    </a>
+                    <div class="video-content">
+                        <h4 class="video-title">为2022冬奥会加油!</h4>
+                        <div class="video-belong">体育赛事</div>
+                        <span class="video-watch-times">100万次观看</span>
+                    </div>
+                </div>
+
+                <div class="video-next">
+                    <a class="video-photo"> <img class="image" src="video6.jpg">
+                        <label class="video-time-frame"><span class="video-time">10:23</span></label>
+                    </a>
+                    <div class="video-content">
+                        <h4 class="video-title">为2022冬奥会加油!</h4>
+                        <div class="video-belong">体育赛事</div>
+                        <span class="video-watch-times">19.6万次观看</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment">
+            <div class="intro">
+                <div class="C_name">简介</div>
+                <div class="content">
+                    <div class="summery">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。<a class="summery_more" href="">显示全部</a></div>
+                </div>
+                <div class="discussion">
+                    <div class="input">
+                        <div class="login">
+                            <div id='login'>
+                            <a class="login_1" href="login.html">登录</a>
+                            <span>|</span>
+                            <a class="login_1" href="register.html">注册</a>
+                            </div>
+                            <span id='username'></span>                           
+                        </div>
+                        </div>
+                        <div class="textarea">
+                            <textarea class="discuss_input_text" placeholder="说点什么！"></textarea>
+                        </div>
+                        <div class="submit">
+                            <button class="discuss_submit" onclick="submit();">发表评论</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment_area">
+                <div class="line"></div>
+                <div class="page">
+                    <a href="" class="number">1</a>
+                    <a href="" class="number">2</a>
+                    <a href="" class="number">3</a>
+                    <button class="up_down">上一页</button>
+                    <button class="up_down">下一页</button>
+                </div>
+                <div class="list_name">全部评论</div>
+                <div class="list">
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者1号</div>
+                        <div class="comment_content">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者2号</div>
+                        <div class="comment_content">我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者3号</div>
+                        <div class="comment_content">我少说点。这应该是个有趣的直播，没错他应该是的。</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者4号</div>
+                        <div class="comment_content">楼下不说话</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者5号</div>
+                        <div class="comment_content"></div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者6号</div>
+                        <div class="comment_content">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者7号</div>
+                        <div class="comment_content">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="comment_0">
+                        <div class="comment_user_picture"></div>
+                        <div class="comment_user_name">测试者8号</div>
+                        <div class="comment_content">填满填满填满填满填满填满填满填满填满填满填满填满填满填满填满填满。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                        <div class="evaluate">
+                            <button class="choose">顶</button>
+                            <button class="choose">踩</button>
+                        </div>
+                        <div class="line" style="top: -2px;"></div>
+                    </div>
+                    <div class="page" style="top: 40px;">
+                        <a href="" class="number">1</a>
+                        <a href="" class="number">2</a>
+                        <a href="" class="number">3</a>
+                        <button class="up_down">上一页</button>
+                        <button class="up_down">下一页</button>
+                    </div>
+                    <div class="return_intro"><a class="return_intro_a" href="">发表评论</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

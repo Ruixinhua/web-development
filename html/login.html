@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>login</title>
-	<link rel="stylesheet" type="text/css" href="logreg.css">
-    	
-		<script type="text/javascript">
-		
-		function check(){
-			var username = document.getElementById("username").value;
-			var password = document.getElementById("password").value;
-		  if(username == "")//如果用户名为空
-		  {
-			alert("您还没有填写用户名！");
-			form.username.focus();
-			return false;
-		  }
-		  if(password == "")//如果密码为空
-		  {
-			alert("您还没有填写密码！");
-			myform.pass.focus();
-			return false;
-		  }
-		 
-		}
-				
-	</script>
+    <meta charset="utf-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="logreg.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#login").click(function () {
+                //验证是否输入用户名和密码
+                alert('test');
+                if ($("#username").val().length == 0) {
+
+                    return alert("请输入用户名!");
+                }
+                if ($("#password").val().length == 0) {
+                    return alert("请输入密码!");
+                }
+                $.ajax({
+                    //url待定，暂时填写本地url
+                    url: "http://123.207.25.94/PanoCam-DataServer/local/test",
+                    type: "post",
+                    dataType: 'json',
+                    async: false,
+                    data: {
+                        username: $('#username').val(),
+                        password: $('#password').val()
+                    },
+                    success: function (res) {
+
+                        window.localStorage.username = $("#username").val();
+                        alert(JSON.stringify(res));
+                        window.location.href = 'home.html';
+
+                    },
+                    error: function (err) {
+                        alert(JSON.stringify(err));
+
+                    }
+                })
+
+            })
+
+        });
+    </script>
 </head>
+
 <body>
-	<div class="wrapper">
-		<div class="container">
-			<h1>Welcome</h1>
-			
-			<form name='form' class="form" method='post' action=''>
-				<input type="text" placeholder="用户名" id='username'>
-				<input type="password" placeholder="密码" id='password'>
-				<button type="submit" id="login-button" name='submit' value='submit' onclick="return check();">登录/Login</button>
-				<button type="submit" id="register-button"><a href="register.html" class="cc">注册/Register</a></button>
-				
-			</form>
-		</div>
-			<ul class="bg-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			</ul>
-	</div>
+    <div class="wrapper">
+        <div class="container">
+
+            <h1>欢迎登录</h1>
+            <div class="form">
+                <input type="text" placeholder="用户名" id='username'>
+                <input type="password" placeholder="密码" id='password'>
+                <button id="login">登录</button>
+                <button id="register-button">
+                    <a href="register.html" class="cc">注册</a>
+                </button>
+                <p>
+                    <a href="changePassword.html" class="forget">忘记密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a href="home.html" class="return">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回首页</a>
+
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

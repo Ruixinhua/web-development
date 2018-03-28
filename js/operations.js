@@ -1,48 +1,98 @@
 $(document).ready(function() {
+    $("#login").click(function() {
+        alert("login");
+        $.ajax({
+                url: "http://123.207.25.94/PanoCam-DataServer/local/test",
+                type: "post",
+                async: false,
+                dataType: 'json',
+                data: {
+                    username: 'test',
+                    password: 'test'
+                },
+                success: function(res) {
+                    alert('s');
+                    alert(JSON.stringify(res));
+                },
+                error: function(err) {
+                    alert(JSON.stringify(err));
+                }
+            })
+            // $.get("/test", function(data, status) {
+            //     alert(JSON.stringify(data));
+            // })
+    });
     $("#test").click(function() {
         alert("test");
-        $.get("/connect?name=session", function(data, status) {
-            alert("数据：" + data + "\n状态：" + status);
-        });
+        $.ajax({
+                url: "http://123.207.25.94/PanoCam-DataServer/local/test",
+                type: "get",
+                async: false,
+                dataType: 'json',
+                success: function(res) {
+                    alert('s');
+                    alert(JSON.stringify(res));
+                },
+                error: function(err) {
+                    alert(JSON.stringify(err));
+                }
+            })
+            // $.get("/test", function(data, status) {
+            //     alert(JSON.stringify(data));
+            // })
     });
-    $('#range').jRange({
-        from: 0,
-        to: 0,
-        step: 20,
-        format: '%s',
-        width: 300,
-        showLabels: false,
-        showScale: false,
-        snap: true,
-        ondragend: function() {
-            var value = $('#range').val();
-            var message = {
-                name: 'x',
-                param: value
-            }
-            $.post("/event", message, function(data, status) {
-                if (status) {
-                    $('#xTb').html(data);
-                } else {
-                    alert('移动视频失败');
-                }
-            })
-        },
-        onbarclicked: function() {
-            var value = $('#range').val();
-            var message = {
-                name: 'x',
-                param: value
-            }
-            $.post("/event", message, function(data, status) {
-                if (status) {
-                    $('#xTb').html(data);
-                } else {
-                    alert('移动视频失败');
-                }
-            })
+    $('#range').change(function() {
+        var value = $('#range').val();
+        var message = {
+            name: 'x',
+            param: value
         }
+        $.post("/event", message, function(data, status) {
+            if (status) {
+                $('#xTb').html(data);
+            } else {
+                alert('移动视频失败');
+            }
+        })
     });
+    /*  $('#range').jRange({
+          from: 0,
+          to: 0,
+          step: 20,
+          format: '%s',
+          width: 300,
+          showLabels: false,
+          showScale: false,
+          snap: true,
+          ondragend: function() {
+              var value = $('#range').val();
+              var message = {
+                  name: 'x',
+                  param: value
+              }
+              $.post("/event", message, function(data, status) {
+                  if (status) {
+                      $('#xTb').html(data);
+                  } else {
+                      alert('移动视频失败');
+                  }
+              })
+          },
+          onbarclicked: function() {
+              var value = $('#range').val();
+              var message = {
+                  name: 'x',
+                  param: value
+              }
+              $.post("/event", message, function(data, status) {
+                  if (status) {
+                      $('#xTb').html(data);
+                  } else {
+                      alert('移动视频失败');
+                  }
+              })
+          }
+      });*/
     $('#sessionBt').click(function() {
         var session = $('#session').val();
         var message = {
@@ -68,7 +118,8 @@ $(document).ready(function() {
                 $('#widthTb').html(data);
                 $('#xTb').html(data);
                 $('#amplificationTb').html(1);
-                $('#range').jRange('updateRange', '0,' + String(data), String(data));
+                //$('#range').jRange('updateRange', '0,' + String(data), String(data));
+                $('#range').val(parseInt(data));
             } else {
                 alert('width获取失败');
             }
