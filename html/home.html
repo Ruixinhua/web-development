@@ -22,9 +22,21 @@
             if (localStorage.username.length > 1) {
                 username.innerHTML = localStorage.username;
                 img.innerHTML = '<img alt="user" src="user.png" style:"width=30px height=30px border-radius=15px;">';
-                login.innerHTML = '';
+                document.getElementById("login").style.display="none";
+                document.getElementById("user-log").style.display="none";
+                document.getElementById("log-out").style.display="block";
             }
         }
+    </script>
+    <script>
+        $(function(){
+            $(document).ready(function () {
+                $("#log-out").click(function () {
+                    $('#log-out').css("display","none");
+                    window.localStorage.username='';
+                });
+            });
+        });
     </script>
 
     <style type="text/css">
@@ -34,7 +46,7 @@
             position: relative;
             top: 0;
             left: 0;
-            background-color: blue;
+            
             z-index: 99;
         }
 
@@ -89,18 +101,11 @@
             height: 20px;
         }
 
-        .user {
-            position: relative;
-            top: -50px;
-        }
-
         .user-center {
-            position: relative;
+            position: absolute;
             background: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 15px;
             left: 960px;
+            top: 10px;
             -moz-border-radius: 15px;
             -webkit-border-radius: 15px;           
             z-index: 99;
@@ -120,7 +125,7 @@
             position: relative;
             top: 40px;
             left: 30px;
-            width: 240px;
+            width: 300px;
             height: 1800px;
         }
 
@@ -490,7 +495,7 @@
 <body>
     <div class="body">
         <div class="header">
-            <div class="logo"></div>
+            <div class="logo" style='text-align:center'>logo</div>
             <div class="search">
                 <div class="search-input">
                     <input class="input">
@@ -499,8 +504,13 @@
                     <img alt="search" src="search.png" class="search-icon">
                 </div>
             </div>
-            <div class="user">
-                <img alt="user" class="user-center" src="user.png">
+            <div id="user" class='user-center'>
+            <div id='user-log'>
+                <a class="login_1" href="login.html">登录</a>
+                <span>|</span>
+                <a class="login_1" href="register.html">注册</a>              
+            </div>
+            <span id='log-out' style="display:none"><a class='login_1' href='home.html'>退出登录</a></span>
             </div>
         </div>
 
@@ -557,6 +567,7 @@
                 </table>
             </div>
             <div class="video-list">
+                <h3 style='text-align:center '>-----直播间列表-----</h3>
                 <div class="video-next">
                     <a class="video-photo">
                         <img class="image" src="video1.jpg">
@@ -660,8 +671,10 @@
                                 <span>|</span>
                                 <a class="login_1" href="register.html">注册</a>
                             </div>
+                            <div>
                             <span id='img'></span>
                             <span id='username'></span>
+                            </div>
                         </div>
                     </div>
                     <div class="textarea">
@@ -673,7 +686,7 @@
                 </div>
             </div>
 
-        <div class="comment_area">
+            <div class="comment_area">
             <div class="line"></div>
             <div class="page">
                 <a href="" class="number">1</a>
@@ -775,8 +788,8 @@
                     <a class="return_intro_a" href="">发表评论</a>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
 </div>
 </body>
 
