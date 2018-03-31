@@ -3,115 +3,306 @@
 
 <head>
     <meta charset="utf-8">
-    <title>视频播放</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="jquery.range.css">
+    <title>test1</title>
+
     <script src="jquery-3.3.1.min.js"></script>
     <script src="operations.js"></script>
+    <link rel="stylesheet" href="jquery.range.css">
     <script src="jquery.range.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript">
+        function submit() {
+            var content = document.getElementsByClassName("discuss_input_text")[0].value;
+            var text = document.createElement("div.comment_0")
+            text.innerHTML = "<div class='comment_user_picture'></div><div class='comment_user_name'>功能测试</div><div class='comment_content'>" + content + "</div><div class='evaluate'><button class='choose'>顶</button><button class='choose'>踩</button></div><div class='line' style='top: -2px;'></div></div>";
+            var list = document.getElementsByClassName("list")[0];
+            list.insertBefore(text, list.childNodes[0]);
+        }
+    </script>
 </head>
 
 <body>
-    <div class="top">
-        <p class="nav">
-            <input type="button" name="home" href="home.html" value="首页">
-            <input type="button" name="about" href="#" value="关于我们">
-            <input type="button" name="work" href="#" value="作品展示">
-            <a href="login.html" class="right">登录</a>
-            <a href="register.html" class="right">注册&nbsp;&nbsp;</a>
-        </p>
-    </div>
-    <img src="background.jpg" width="100%">
-    <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab" id="vlc" style="width: 640px; height: 480px;">
-		<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
-       width="640"
-       height="480"
-	   id="vlc"
-	   autoplay="yes" loop="no"
-	   target="rtsp://localhost:554/test" />
-		<param id="target" name="target" value="rtsp://localhost:554/test" />
-	</object>
-    <button id="test">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
-    <br><br>
-    <input id="range" type="hidden" class="range" value="0" />
-    <div id="state" style="color:white" align="center">
-        <table border="2px">
-            <tr>
-                <th>Session ID</th>
-                <th>x</th>
-                <th>width</th>
-                <th>amplification</th>
-            </tr>
-            <tr>
-                <td id="sessionTb">0</td>
-                <td id="xTb">0</td>
-                <td id="widthTb">0</td>
-                <td id="amplificationTb">0</td>
-            </tr>
-        </table>
-    </div>
-    <br>
-    <br>
-    <div class="move">
-        <button id="widthBt" type="button" class="control">width</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="magnifyBt" type="button" class="control">放大</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="shrinkBt" type="button" class="control">缩小</button>>
-    </div>
-
-    <div class="submit">
-        <br><br><label style="color:white">Session ID: </label>
-        <input id="session" type="text">
-        <button id="sessionBt" type="button">Enter</button>
-        <br><br>
-    </div>
-
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-        <a class="postBtn">确定</a>
-    </div>
-
-    <br><br>
-
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-    </div>
-
-    <br><br>
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-    </div>
-
-    <br><br>
-    <div class="Input_Box">
-        <textarea class="Input_text"></textarea>
-    </div>
-
-    <div class="page">
-        <input type="button" name="首页" value="首页"> &nbsp;&nbsp;
-        <input type="button" name="上一页" value="上一页"> &nbsp;&nbsp;;
-        <input type="button" name="1" value="1"> &nbsp;&nbsp;
-        <input type="button" name="2" value="2"> &nbsp;&nbsp;
-        <input type="button" name="3" value="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" name="50" value="50"> &nbsp;&nbsp;
-        <input type="button" name="下一页" value="下一页"> &nbsp;&nbsp;
-        <input type="button" name="尾页" value="尾页">
-    </div>
-
-    <br><br><br>
-
-    <div class="line_01"><span>小小分隔线 单标签实现</span></div>
-
-    <br><br><br>
-
-    <footer>
-        友情链接：
-        <div class="web">
-            <a href="https://www.baidu.com/">百度</a>
-            <br>
-            <a href="http://www.qq.com/">腾讯</a>
+    <div class="body">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="search">
+                <div class="search-input">
+                    <input class="input">
+                </div>
+                <div class="search-button">
+                    <img alt="search" src="search.png" class="search-icon">
+                </div>
+            </div>
+            <div class="user">
+                <img alt="user" class="user-center" src="user.png">
+            </div>
         </div>
-    </footer>
 
+        <div class="video">
+            <div class="video_part">
+                <div class="playerall">
+
+                    <div class="range" style="position: relative;width:600px;height: 10px;z-index: 10;top: 0px;left: 40px;">
+                        <iframe id='iframebar' frameBorder=0  marginHeight=0 marginWidth=0 allowtransparency=true style="position:absolute;visibility:inherit; top:0px;left:0px;height:10px;width:600px;z-index:-1;">    
+                        </iframe>
+                        <input id="range" class="range_1" type="range" name="位置" min="0" max="360" value="0" style="    width: 600px;position: relative;top: -27px;left:0px;height: 30px;">   
+                    </div>
+                    <div class="player">
+                        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab" id="vlc" style="width: 688px; height: 387px;" class="box">
+                          <param name="wmode" value="transparent"> 
+                          <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+                          width="688px"
+                          height="387px"
+                          id="vlc"
+                          autoplay="yes" loop="no"
+                          target="rtsp://localhost:554/test" />
+                          <param id="target" name="target" value="rtsp://172.25.25.220/live" />
+                      </object>
+                  </div>
+                  <div class="button">
+                    <div class="bigger" style="position: relative;top:-300px; left:600px;z-index:10; width:70px; height: 40px;">
+                        <iframe id='iframebar' src="about:blank" frameBorder=0  marginHeight=0 marginWidth=0 style="position:absolute;visibility:inherit; top:0px;left:0px;height:40px;width:70px;z-index: -1;"> 
+                        </iframe>
+                        <button class="button_small_big" style="position: relative;width: 70px;height: 40px;">放大</button>
+                    </div>
+                    <div class="smaller" style="position: relative;top:-220px; left:600px;z-index:10; width:70px; height: 40px;">
+                        <iframe id='iframebar' src="about:blank" frameBorder=0  marginHeight=0 marginWidth=0 style="position:absolute;visibility:inherit; top:0px;left:0px;height:40px;width:70px;z-index: -1"> 
+                        </iframe>
+                        <button class="button_small_big" style="position: relative;width: 70px;height: 40px;">缩小</button>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter">
+                <div class="session">
+                    <div class="video_name">赛事直播</div>
+                    <div class="S_name">Session:</div>
+                    <input id="session" class="S_text" />
+                    <button id="sessionBt" class="S_submit">connect</button>
+                </div>
+                <div class="width">
+
+                </div>
+            </div>
+        </div>
+        <div class="barrage">
+            <div class="state" id="state">
+                <table class="table" border="2px">
+                    <tr>
+                        <th>Session ID</th>
+                        <th>x</th>
+                        <th>width</th>
+                        <th>amplification</th>
+                    </tr>
+                    <tr>
+                        <td id="sessionTb">0</td>
+                        <td id="xTb">0</td>
+                        <td id="widthTb">0</td>
+                        <td id="amplificationTb">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="barrage_content"></div>
+        </div>
+    </div>
+
+
+    <div class="relative_video">
+        <div class="video-list">
+            <div class="video-next">
+                <a class="video-photo"> <img class="image" src="video1.jpg">
+                    <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                </a>
+                <div class="video-content">
+                    <h4 class="video-title">为2022冬奥会加油!</h4>
+                    <div class="video-belong">体育赛事</div>
+                    <span class="video-watch-times">100万次观看</span>
+                </div>
+            </div>
+
+            <div class="video-next">
+                <a class="video-photo"> <img class="image" src="video2.jpg">
+                    <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                </a>
+                <div class="video-content">
+                    <h4 class="video-title">为2022冬奥会加油!</h4>
+                    <div class="video-belong">体育赛事</div>
+                    <span class="video-watch-times">100万次观看</span>
+                </div>
+            </div>
+
+            <div class="video-next">
+                <a class="video-photo"> <img class="image" src="video3.jpg">
+                    <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                </a>
+                <div class="video-content">
+                    <h4 class="video-title">为2022冬奥会加油!</h4>
+                    <div class="video-belong">体育赛事</div>
+                    <span class="video-watch-times">100万次观看</span>
+                </div>
+            </div>
+
+            <div class="video-next">
+                <a class="video-photo"> <img class="image" src="video4.jpeg">
+                    <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                </a>
+                <div class="video-content">
+                    <h4 class="video-title">为2022冬奥会加油!</h4>
+                    <div class="video-belong">体育赛事</div>
+                    <span class="video-watch-times">100万次观看</span>
+                </div>
+            </div>
+
+            <div class="video-next">
+                <a class="video-photo"> <img class="image" src="video5.jpg">
+                    <label class="video-time-frame"><span class="video-time">20:22</span></label>
+                </a>
+                <div class="video-content">
+                    <h4 class="video-title">为2022冬奥会加油!</h4>
+                    <div class="video-belong">体育赛事</div>
+                    <span class="video-watch-times">100万次观看</span>
+                </div>
+            </div>
+
+            <div class="video-next">
+                <a class="video-photo"> <img class="image" src="video6.jpg">
+                    <label class="video-time-frame"><span class="video-time">10:23</span></label>
+                </a>
+                <div class="video-content">
+                    <h4 class="video-title">为2022冬奥会加油!</h4>
+                    <div class="video-belong">体育赛事</div>
+                    <span class="video-watch-times">19.6万次观看</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="intro">
+            <div class="C_name">简介</div>
+            <div class="content">
+                <div class="summery">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。<a class="summery_more" href="">显示全部</a></div>
+            </div>
+            <div class="discussion">
+                <div class="input">
+                    <div class="login">
+                        <a class="login_1" href="login.html">登录</a>
+                        <span>|</span>
+                        <a class="login_1" href="register.html">注册</a>
+                    </div>
+                    <div class="textarea">
+                        <textarea class="discuss_input_text" placeholder="说点什么！"></textarea>
+                    </div>
+                    <div class="submit">
+                        <button class="discuss_submit" onclick="submit();">发表评论</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment_area">
+            <div class="line"></div>
+            <div class="page">
+                <a href="" class="number">1</a>
+                <a href="" class="number">2</a>
+                <a href="" class="number">3</a>
+                <button class="up_down">上一页</button>
+                <button class="up_down">下一页</button>
+            </div>
+            <div class="list_name">全部评论</div>
+            <div class="list">
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者1号</div>
+                    <div class="comment_content">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者2号</div>
+                    <div class="comment_content">我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。我要多说点。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者3号</div>
+                    <div class="comment_content">我少说点。这应该是个有趣的直播，没错他应该是的。</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者4号</div>
+                    <div class="comment_content">楼下不说话</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者5号</div>
+                    <div class="comment_content"></div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者6号</div>
+                    <div class="comment_content">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者7号</div>
+                    <div class="comment_content">这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="comment_0">
+                    <div class="comment_user_picture"></div>
+                    <div class="comment_user_name">测试者8号</div>
+                    <div class="comment_content">填满填满填满填满填满填满填满填满填满填满填满填满填满填满填满填满。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。这应该是个有趣的直播，没错他应该是的。</div>
+                    <div class="evaluate">
+                        <button class="choose">顶</button>
+                        <button class="choose">踩</button>
+                    </div>
+                    <div class="line" style="top: -2px;"></div>
+                </div>
+                <div class="page" style="top: 40px;">
+                    <a href="" class="number">1</a>
+                    <a href="" class="number">2</a>
+                    <a href="" class="number">3</a>
+                    <button class="up_down">上一页</button>
+                    <button class="up_down">下一页</button>
+                </div>
+                <div class="return_intro"><a class="return_intro_a" href="">发表评论</a></div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

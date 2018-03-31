@@ -10,7 +10,6 @@ var eSession = function eSession(res, args) {
     console.log('Set session ID: ' + params.session);
     res.write(params.session);
     res.end();
-
 }
 
 var eAmplification = function eAmplification(res, args) {

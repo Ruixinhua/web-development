@@ -1,188 +1,485 @@
-html, body {
-    height:100%;
-    margin:0;
-    padding:0
-}
-
-.top{
+.header {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 0;
     left: 0;
-    width:100%;
-    height:60px;
-    background-image: url("1.jpg");
-    position:fixed; 
-    top:0;
-    z-index: 9999;
-    background-repeat: no-repeat;
+    background-color: blue;
+    z-index: 99;
 }
 
-.nav{
-    font-weight:300;
-    text-align: center;
-
-}
-.right{
-    float:right;
-    text-decoration:none;
-    color: white;
-}
-.nav input{
-    text-align: center;
-    outline: 0;
-    border: 1px blue solid;
-    color: purple;
-    border-radius: 2px;
+.logo {
+    position: relative;
+    top: 10px;
+    left: 0;
+    background-color: grey;
     width: 100px;
-    cursor: pointer;
-    font-size: 18px;
-    -webkit-transition-duration: 0.25s;
-    transition-duration: 0.25s;
-    font-family: 宋体;
-    background:white;
-
+    height: 30px;
 }
 
-.nav input:hover{
-    background-color: #1586ff;
-}
-
-img{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index: -1;
-}
-
-video{
-    margin-left: 100px; 
-	margin-top: 6rem;
-    left: 300px;
-}
-
-.submit{
-    margin-left: 180px;
-}
-
-.submit input[type="text"]{
+.search {
+    position: relative;
+    top: -20px;
+    left: 200px;
+    background-color: white;
     width: 500px;
+    height: 30px;
+    border: 0.5px solid grey;
+}
+
+.input {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 445px;
+    height: 25px;
+}
+
+.search-button {
+    position: relative;
+    top: -30px;
+    left: 450px;
+    background-color: #EEF5FA;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.search-button:hover {
+    opacity: 1;
+}
+
+.search-icon {
+    position: relative;
+    top: 5px;
+    left: 15px;
+    background: none;
+    width: 20px;
     height: 20px;
 }
 
-.move{
-    margin-left: 220px;
+.user {
+    position: relative;
+    top: -50px;
 }
 
-.page{
-    margin-top:50px;
-    margin-left: 300px;
+.user-center {
+    position: relative;
+    background: none;
+    width: 30px;
+    height: 30px;
+    left: 960px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    z-index: 99;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
 }
 
-.control{
-    color: white;
-    background-color: brown;
-    border-color: #EEEEEE;
-    font-weight: 300;
-    font-size: 16px;
-    text-decoration: none;
+table {
+    position: relative;
+    top: 0px;
+    left: 10px;
     text-align: center;
-    line-height: 40px;
-    height: 40px;
-    padding: 0 40px;
-    margin: 0;
-    display: inline-block;
-    appearance: none;
+    height: 60px;
+}
+
+.video-list {
+    position: relative;
+    top: 40px;
+    left: 30px;
+    width: 240px;
+    height: 1800px;
+}
+
+.video-next {
+    position: relative;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 280px;
+    height: 120px;
+}
+
+.image {
+    position: relative;
+    width: 192px;
+    height: 108px;
+    z-index: 2;
     cursor: pointer;
-    border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: .3s;
-    transition-duration: .3s;
 }
 
-.control:hover{
+.video-time-frame {
+    position: relative;
+    width: 20px;
+    height: 10px;
     background-color: grey;
-    text-decoration: none;
-    outline: none;
+    top: -5px;
+    left: -40px;
+    z-index: 2;
+}
+
+.video-time {
+    position: relative;
+    font-size: 80%;
+    width: 15px;
+    height: 10px;
+    z-index: 3;
+    width: 15px;
+}
+
+.video-content {
+    position: relative;
+    left: 195px;
+    top: -130px;
+    right: 0;
+    width: 130px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.video-belong {
+    position: relative;
+    top: 0px;
+    font-size: 14px;
+    color: grey;
+    opacity: 0.7;
+}
+
+.video-watch-times {
+    position: relative;
+    top: 0px;
+    font-size: 12px;
+    color: grey;
+    opacity: 0.7;
+}
+
+.body {
+    position: relative;
+    top: 0;
+    width: 1050px;
+    margin: 0 auto;
+    background-color: white;
+    height: 2100px;
+    z-index: 0；
+}
+
+.video {
+/*    border:10px red solid;*/
+    width: 1050px;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 500px;
+/*    background-color: red;*/
+    z-index: 1;
 }
 
 
-.line_01{ 
-    height: 1px;  
-    border-top: 1px solid #ddd;  
-    text-align: center;  
-}  
-.line_01 span{  
-    position: relative;  
-    top: -8px;  
-    background: #fff;  
-    padding: 0 20px;  
-} 
 
-.range{
-    width: 800px;
-    margin-left: 100px; 
-    -webkit-appearance:none;
-    border-radius: 10px;
+.range_1 {
+    width: 600px;
+    position: relative;
+    top: -10px;
+    left:30px;
 }
 
-.range::-webkit-slider-thumb {
+.range_1::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 25px;
     width: 25px;
-    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
-    background: #ffffff; 
-    border-radius: 50%; /*外观设置为圆形*/
-    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
-    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+    margin-top: -5px;
+    /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff;
+    border-radius: 50%;
+    /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5);
+    /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547;
+    /*添加底部阴影*/
 }
 
-.range::-webkit-slider-runnable-track {
+.range_1::-webkit-slider-runnable-track {
     height: 15px;
-    border-radius: 10px; /*将轨道设为圆角的*/
-    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+    border-radius: 10px;
+    /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+    /*轨道内置阴影效果*/
 }
 
-.range:focus {
+.range_1:focus {
     outline: none;
 }
 
-/*以下是评论区*/
+.video_part{
+    position: relative;
+    height: 500px;
+}
 
-.Input_Box { 
-    margin-left: 300px;
-    width: 495px;   
-    height: 160px;     
-    border: 1px solid #ccc;
-    transition: border linear .2s, box-shadow linear .5s;     
-    border-radius: 5px;     
-    background-color: #fff;         
-    box-shadow: 0 0 5px #ccc;     
-}     
-.Input_Box>textarea { 
-    font-size: 20px;  
-    width: 485px;     
-    height: 111px;     
-    padding: 5px;     
-    outline: none;     
-    border: 0px solid #fff;     
-    resize: none;         
-    border-radius: 5px;     
-}        
-  
-.postBtn {     
-    float: right;       
-    color: #808080;     
-    padding: 9px 20px 7px 20px;         
-    cursor: pointer;          
-    border-radius: 0 0 5px 0;
-    z-index: 44;     
-}     
-.postBtn:hover {     
-    color: #333;     
-    background-color: #efefef;     
-}     
-.postBtn:active {     
-    padding: 10px 20px 6px 20px;     
-}     
+.playerall{
+    position: relative;
+    top: 50px;
+}
+
+.player{
+    position: relative;
+    top: -30px;
+    z-index: 5;
+}
+
+.parameter {
+    position: relative;
+    width: 688px;
+    top: -50px;
+    left: 0;
+    height: 60px;
+    /*          background-color: grey;*/
+}
+
+.video_name {
+    padding: 10px 0 10px 0;
+    font-size: 20px;
+    text-align: center;
+    color: blue;
+    font-family: 微软雅黑;
+    width: 100px;
+    position: relative;
+    top: 8px;
+    left: 10px;
+    background-color: red;
+}
+
+.S_name {
+    padding: 10px 0 10px 0;
+    width: 100px;
+    position: relative;
+    top: -40px;
+    left: 150px;
+    font-size: 20px;
+    font-family: 微软雅黑;
+}
+
+.S_text {
+    width: 330px;
+    height: 30px;
+    position: relative;
+    font-size: 22px;
+    font-family: 微软雅黑;
+    top: -80px;
+    left: 230px;
+    resize: none;
+}
+
+.S_submit {
+    padding: 2px 0 5px 0;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    font-size: 15px;
+    font-family: 微软雅黑;
+    text-align: center;
+    top: -92px;
+    left: 250px;
+    z-index: 9999;
+    background-color: yellow;
+}
+
+.barrage{
+    position: relative;
+    width: 300px;
+    height: 480px;
+    top: -490px;
+    left: 725px;
+}
+
+.barrage_content{
+    position: relative;
+    top: 20px;
+    height: 400px;
+    width: 300px;
+    background-color: blue;
+}
+.relative_video {
+    width: 350px;
+    position: relative;
+    top: 0px;
+    left: 700px;
+    height: 2000px;
+    /*          background-color: green;*/
+    z-index: 1;
+}
+
+.comment {
+    width: 700px;
+    position: relative;
+    top: -1980px;
+    left: 0;
+    height: 1500px;
+    /*          background-color: brown;*/
+    z-index: 1;
+}
+
+.intro {
+    position: relative;
+    top: 30px;
+}
+
+.C_name {
+    padding: 10px 0 10px 0;
+    width: 100px;
+    position: relative;
+    top: 0px;
+    left: 20px;
+    font-size: 20px;
+    font-family: 微软雅黑;
+    color: blue;
+}
+
+.summery {
+    position: relative;
+    text-indent: 2em;
+    left: 20px;
+    width: 640px;
+}
+
+.summery_more {
+    text-decoration: none;
+}
+
+.login {
+    position: relative;
+    font-size: 15px;
+    left: 20px;
+    top: 20px;
+}
+
+.login_1 {
+    text-decoration: none;
+    color: blue;
+}
+
+.discuss_input_text {
+    width: 650px;
+    height: 80px;
+    position: relative;
+    left: 20px;
+    top: 30px;
+    resize: none;
+    font-size: 15px;
+}
+
+.discuss_submit {
+    position: relative;
+    left: 556px;
+    top: 40px;
+    font-size: 16px;
+    width: 120px;
+}
+
+.comment_area {
+    position: relative;
+    top: 150px;
+}
+
+.line {
+    position: relative;
+    top: 70px;
+    width: 100%;
+    height: 1px;
+    background-color: grey;
+}
+
+.page {
+    position: relative;
+    top: 100px;
+    left: 530px;
+    font-size: 15px;
+}
+
+.number {
+    text-decoration: none;
+    color: blue;
+}
+
+.up_down {
+    border: solid 1px grey;
+    background: transparent;
+    color: blue;
+}
+
+.list_name {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    color: blue;
+    font-size: 20px;
+}
+
+.list {
+    position: relative;
+    top: 60px;
+    left: 0;
+    /*          background-color: orange;*/
+    width: 700px;
+    height: 1106px;
+}
+
+.comment_0 {
+    position: relative;
+    top: 0;
+}
+
+.comment_user_picture {
+    position: relative;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    background-image: url("user.png");
+}
+
+.comment_user_name {
+    position: relative;
+    top: -30px;
+    left: 80px;
+    font-size: 12px;
+    color: red;
+}
+
+.comment_content {
+    position: relative;
+    top: -20px;
+    left: 80px;
+    width: 600px;
+    font-size: 12px;
+    color: black;
+}
+
+.evaluate {
+    position: relative;
+    top: -10px;
+    left: 80px;
+    font-size: 12px;
+}
+
+.choose {
+    background: transparent;
+    color: grey;
+}
+
+.return_intro {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    height: 20px;
+    background-color: grey;
+    text-align: center;
+}
+
+.return_intro_a {
+    font-size: 15px;
+    text-decoration: none;
+    color: blue;
+}
